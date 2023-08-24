@@ -4,7 +4,7 @@ import '../models/expense_item.dart';
 
 class HiveDataBase {
   //  reference our box
-  final _myBox = Hive.box("Expense_Database");
+  final _myBox = Hive.box("expense_database");
 
   //  write data
   void saveData(List<ExpenseItem> allExpense) {
@@ -24,7 +24,7 @@ class HiveDataBase {
 
   //  read data
   List<ExpenseItem> readData() {
-    List savedExpenses = _myBox.get("ALL_EXPENSE") ?? [];
+    List savedExpenses = _myBox.get("ALL_EXPENSES") ?? [];
     List<ExpenseItem> allExpense = [];
     for(int i = 0; i<savedExpenses.length; i++) {
       // collect expense data

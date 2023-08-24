@@ -19,7 +19,7 @@ class ExpenseTile extends StatelessWidget {
     return Slidable(
       endActionPane: ActionPane(motion: const StretchMotion(),
       children: [
-        SlidableAction(onPressed: deleteTapped, icon: Icons.delete, backgroundColor: Colors.red,borderRadius: BorderRadius.circular(4),)
+        SlidableAction(onPressed: deleteTapped, icon: Icons.delete, backgroundColor: Colors.black,borderRadius: BorderRadius.circular(4),)
       ],
       ),
       child: ListTile(

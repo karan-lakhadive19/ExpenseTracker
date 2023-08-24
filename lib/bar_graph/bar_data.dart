@@ -1,13 +1,13 @@
 import 'package:expense_tracker/bar_graph/individual_bar.dart';
 
 class BarData {
-  double sunAmount = 0.0;
-  double monAmount = 0.0;
-  double tueAmount = 0.0;
-  double wedAmount = 0.0;
-  double thuAmount = 0.0;
-  double friAmount = 0.0;
-  double satAmount = 0.0;
+  final double sunAmount;
+  final double monAmount;
+  final double tueAmount;
+  final double wedAmount;
+  final double thuAmount;
+  final double friAmount;
+  final double satAmount;
 
   
 
@@ -26,12 +26,12 @@ class BarData {
   void initializeBarData() {
     barData = [
       IndividualBar(x: 0, y: sunAmount),
-      IndividualBar(x: 0, y: monAmount),
-      IndividualBar(x: 0, y: tueAmount),
-      IndividualBar(x: 0, y: wedAmount),
-      IndividualBar(x: 0, y: thuAmount),
-      IndividualBar(x: 0, y: friAmount),
-      IndividualBar(x: 0, y: satAmount),
+      IndividualBar(x: 1, y: monAmount),
+      IndividualBar(x: 2, y: tueAmount),
+      IndividualBar(x: 3, y: wedAmount),
+      IndividualBar(x: 4, y: thuAmount),
+      IndividualBar(x: 5, y: friAmount),
+      IndividualBar(x: 6, y: satAmount),
     ];
   }
 }

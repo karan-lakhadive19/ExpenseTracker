@@ -17,6 +17,13 @@ class _HomePageState extends State<HomePage> {
   final newExpenseNameController = TextEditingController();
   final newExpenseAmountContoller = TextEditingController();
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Provider.of<ExpenseData>(context, listen: false).prepareData();
+  }
+
   void addNewExpense() {
     showDialog(
         context: context,
@@ -28,10 +35,17 @@ class _HomePageState extends State<HomePage> {
                   TextField(
                     //name
                     controller: newExpenseNameController,
+                    decoration: InputDecoration(
+                      hintText: "Enter Expense"
+                    ),
                   ),
                   TextField(
                     //amount
                     controller: newExpenseAmountContoller,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: "Enter value"
+                    ),
                   )
                 ],
               ),
@@ -77,11 +91,14 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.grey[300],
           floatingActionButton: FloatingActionButton(
             onPressed: addNewExpense,
+            backgroundColor: Colors.black,
             child: Icon(Icons.add),
           ),
           body: ListView(
             children: [
+              SizedBox(height: 20,),
               ExpenseSummary(startOfWeek: value.startOfWeekDate()),
+              const SizedBox(height: 20,),
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
